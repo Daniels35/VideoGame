@@ -3,7 +3,6 @@ const { Videogame, Genre } = require('../db.js');
 
 const router = Router();
 
-//Recibe la data colectada desde el formulario por el body
 // Creo el videojuego en la db
 
 router.post('/', async (req, res) => {
@@ -26,7 +25,8 @@ router.post('/', async (req, res) => {
   });
   await Promise.all(genrePromises);
 
-  res.send(`Videogame created successfully! ID: ${gameCreated.id}`)
+  res.json({ message: `Videogame created successfully! ID: ${gameCreated.id}`, game: gameCreated });
+
 });
 
 module.exports = router;

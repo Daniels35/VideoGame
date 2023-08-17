@@ -3,6 +3,7 @@ const videogamesRoutes = require('./videogames.js');
 const videogameIdRoutes = require('./videogameId.js');
 const genresRoutes = require('./genres.js');
 const createVideogameRoutes = require('./createVideogame.js');
+const platformsRoutes = require('./platforms.js');
 
 const router = Router();
 
@@ -17,5 +18,8 @@ router.use('/videogames', createVideogameRoutes);
 
 // Busco todos los genres
 router.use('/genres', genresRoutes);
+
+// Busco todas las plataformas
+router.use('/platforms', platformsRoutes);
 
 module.exports = router;
