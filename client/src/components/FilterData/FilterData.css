@@ -1,0 +1,44 @@
+.filter-container-1{
+    text-align: center;
+    color: #fff;
+}
+
+.filter-container-1 h1 {
+    margin-bottom: -5px;
+}
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    height: auto;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    margin: 0 auto;
+}
+
+.filter-container select {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 0.5rem;
+    width: 20%;
+    border-radius: 15px;
+    text-align: center;
+    outline: none;
+}
+
+/* Estilos para dispositivos pequeños (mobile) */
+@media (max-width: 600px) {
+    .filter-container {
+        flex-direction: column;
+    }
+    
+    .filter-container select {
+        width: 100%;
+        margin-bottom: 0.5rem;
+        margin-bottom: 20px;
+    }
+}

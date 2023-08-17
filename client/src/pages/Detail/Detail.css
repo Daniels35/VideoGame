@@ -1,0 +1,36 @@
+.Detail_container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 30px 0 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .Detail_image {
+    border-radius: 10px;
+    box-shadow: 0 0 10px #fff;
+    max-width: 80%;
+    height: auto;
+  }
+  
+  .Detail_description {
+    text-align: justify;
+  }
+  
+
+  @media (max-width: 600px) {
+    .Detail_image {
+
+        max-width: 100%;
+        margin: 0 5px 0 5px;
+        
+      }
+  
+
+  }
+  

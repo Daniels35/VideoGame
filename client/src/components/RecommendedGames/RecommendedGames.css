@@ -1,0 +1,35 @@
+.recommendedTitle {
+  border-top: 1px dotted white;
+  padding-top: 10px;
+}
+
+.recommended-games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .recommended-games a {
+    flex-basis: 30%;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .recommended-games img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #fff;
+  }
+  
+  .recommended-games p {
+    margin: 5px 0;
+  }
+  
+  @media (max-width: 768px) {
+    .recommended-games a {
+      flex-basis: 100%;
+    }
+  }
+  

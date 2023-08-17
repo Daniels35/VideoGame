@@ -1,0 +1,36 @@
+.header {
+    text-align: center;
+    color: #fff;
+  }
+  
+  .headerTitle {
+    margin: 0;
+    padding: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .header nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .header nav ul li {
+    margin: 0 40px;
+  }
+  
+  .header nav ul li a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .header nav ul li a:hover,
+  .active {
+    border-bottom: 2px solid #fff;
+  }
+  
+  

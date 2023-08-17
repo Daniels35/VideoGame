@@ -1,0 +1,35 @@
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+    
+    .pagination {
+      display: flex;
+      align-items: center;
+      justify-self: center;
+    }
+  
+  .pagination button {
+    background: none;
+    border: none;
+    color: white;
+    margin: 0 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  .pagination button:hover,
+  .pagination .active {
+    background: white;
+    border-radius: 10px;
+    color: black;
+  }
+  
+  .pagination-button-next {
+    background: white !important;
+    border-radius: 10px !important;
+    color: black !important;
+  }
