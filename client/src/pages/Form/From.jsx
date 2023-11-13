@@ -14,7 +14,6 @@ const Form = () => {
   const [selectedPlatforms, setSelectedPlatforms] = useState([]);
   const genres = useSelector((state) => state.genres);
   const platforms = useSelector((state) => state.platforms);
-
   const [isNameValid, setIsNameValid] = useState(null);
   const [isImageValid, setIsImageValid] = useState(null);
   const [isDescriptionValid, setIsDescriptionValid] = useState(null);
@@ -75,16 +74,11 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    alert('El ingreso de videojuegos está deshabilitado.');
     if (!isNameValid || !isImageValid || !isDescriptionValid || !isReleasedValid || !isRatingValid || !isGenresValid || !isPlatformsValid) {
       alert('Por favor, completa todos los campos correctamente');
       return;
     }
-  
-    const ratingNumber = Number(rating); 
-    const newVideogame = { name, image, description, platforms: selectedPlatforms, released, rating: ratingNumber, genres: selectedGenres };
-    dispatch(createVideogame(newVideogame));
-    alert('Videojuego creado exitosamente');
-  
     setName('');
     setImage('');
     setDescription('');
@@ -92,7 +86,6 @@ const Form = () => {
     setRating('');
     setSelectedGenres([]);
     setSelectedPlatforms([]);
-  
     setIsNameValid(false);
     setIsImageValid(false);
     setIsDescriptionValid(false);
@@ -101,7 +94,6 @@ const Form = () => {
     setIsGenresValid(false);
     setIsPlatformsValid(false);
   };
-  // ...
 
 return (
     <>
@@ -163,7 +155,6 @@ return (
     </div>
     </>
 );
-
         };  
 
 export default Form;

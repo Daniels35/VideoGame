@@ -38,6 +38,25 @@
     transition: background-color 0.3s, transform 0.3s;
 }
 
+.close-search-buttonBar {
+    color: red;
+    position: relative;
+    top: -55px;
+    background-color: none !important;
+    left: 160px;
+    text-decoration: none;
+    border: none;
+    display: inline-block;
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0;
+    cursor: pointer;
+}
+
+.close-search-buttonBar:hover {
+    transform: scale(1.2);
+}
+
 .search-button:hover,
 .clear-button:hover {
     background-color: rgba(255, 255, 255, 0.7);
@@ -45,7 +64,13 @@
     transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 860px) {
+    .close-search-buttonBar {
+        left: 140px;
+    }
+}
+
+@media (max-width: 750px) {
     .search-input {
         width: 80%;
     }

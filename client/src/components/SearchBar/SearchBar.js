@@ -33,15 +33,15 @@ const SearchBar = () => {
                 placeholder="BUSCAR VIDEOJUEGO POR NOMBRE" 
                 className="search-input"
                 />
-            {searchInputValue && (
-                <button 
-                type="button" 
-                onClick={handleClearInput} 
-                className="clear-button"
-                >
-                X
-                </button>
-            )}
+                {searchInputValue && (
+                    <p 
+                    type="button" 
+                    onClick={handleClearInput} 
+                    className="close-search-buttonBar"
+                    >
+                    X
+                    </p>
+                )}
             <button type="submit" className="search-button">Buscar</button>
         </form>
     );

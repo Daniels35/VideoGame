@@ -1,6 +1,7 @@
 .filter-container-1{
     text-align: center;
     color: #fff;
+    z-index: 99;
 }
 
 .filter-container-1 h1 {
