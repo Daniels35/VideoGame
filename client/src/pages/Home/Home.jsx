@@ -10,7 +10,6 @@ import './Home.css';
 import StarRating from '../../components/Rating/Rating';
 import Loading from '../../components/Loading/Loading';
 
-
 const applyFilters = (videogames, filterBy, orderBy, ratingFilter, sourceFilter) => {
   let filteredVideogames = [...videogames];
 
@@ -38,7 +37,6 @@ const applyFilters = (videogames, filterBy, orderBy, ratingFilter, sourceFilter)
     filteredVideogames = filteredVideogames.filter(videogame => videogame.source === sourceFilter);
   }
   
-
   return filteredVideogames;
 }
 
@@ -54,7 +52,6 @@ const Home = () => {
   const ratingFilter = useSelector(state => state.ratingFilter);
   const sourceFilter = useSelector(state => state.sourceFilter);
   const [isLoading, setIsLoading] = useState(true);
-
 
   let filteredGames = applyFilters(allVideogames, filterBy, orderBy, ratingFilter, sourceFilter);
   let filteredSearchResults = applyFilters(searchResults, filterBy, orderBy, ratingFilter, sourceFilter);
@@ -84,7 +81,6 @@ const Home = () => {
     };
   }, []);
 
-  // Whenever a search or filter is applied, reset to page 1
   useEffect(() => {
     setCurrentPage(1);
   }, [searchResults, filterBy, orderBy, ratingFilter]);
