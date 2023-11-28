@@ -13,10 +13,10 @@ function App() {
       <MyParticles />
       <Router>
         <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/game/:id" element={<Detail />} />
-          <Route path="/new" element={<Form />} />
+          <Route path="/VideoGame" element={<Landing />} />
+          <Route path="/VideoGame/home" element={<Home />} />
+          <Route path="/VideoGame/game/:id" element={<Detail />} />
+          <Route path="/VideoGame/new" element={<Form />} />
           {/* <Route path="*" element={<div>404 NOT FOUND</div>} /> */}
         </Routes>
       </Router>

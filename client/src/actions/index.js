@@ -29,7 +29,6 @@ export function changeSearchInputValue(value) {
   };
 }
 
-
 export function getVideogameById(id) {
   return (dispatch) =>
     fetch(`${API_URL}/videogames/${id}`)
@@ -51,6 +50,9 @@ export function getGenres() {
           type: "GET_GENRES",
           payload: json,
         });
+      })
+      .catch((error) => {
+        console.error("Error fetching genres:", error);
       });
 }
 
@@ -60,10 +62,12 @@ export function getPlatforms() {
       .then(response => response.json())
       .then(json => {
         dispatch({ type: "GET_PLATFORMS", payload: json });
+      })
+      .catch(error => {
+        console.error("Error fetching platforms:", error);
       });
   };
 }
-
 
 export function createVideogame(obj) {
   console.log("Fecha en la acción de Redux:", obj.released);

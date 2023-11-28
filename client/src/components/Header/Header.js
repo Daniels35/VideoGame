@@ -6,15 +6,15 @@ const Header = ({ activePage }) => {
   return (
     <header className="header">
       <div className='headerTitle'>
-        <Link to="/">PI VIDEOGAMES</Link>
+        <Link to="/VideoGame">PI VIDEOGAMES</Link>
       </div>
       <nav>
         <ul>
         <li>
-            <Link to="/home" className={activePage === "home" ? "active" : ""}>Home</Link>
+            <Link to="/VideoGame/home" className={activePage === "home" ? "active" : ""}>Home</Link>
             </li>
             <li>
-            <Link to="/new" className={activePage === "new" ? "active" : ""}>New</Link>
+            <Link to="/VideoGame/new" className={activePage === "new" ? "active" : ""}>New</Link>
             </li>
         </ul>
       </nav>

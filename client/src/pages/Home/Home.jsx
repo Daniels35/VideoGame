@@ -9,6 +9,7 @@ import Header from '../../components/Header/Header';
 import './Home.css';
 import StarRating from '../../components/Rating/Rating';
 import Loading from '../../components/Loading/Loading';
+import { MdSignalWifiConnectedNoInternet4, MdOutlineQuestionMark } from "react-icons/md";
 
 const applyFilters = (videogames, filterBy, orderBy, ratingFilter, sourceFilter) => {
   let filteredVideogames = [...videogames];
@@ -36,7 +37,6 @@ const applyFilters = (videogames, filterBy, orderBy, ratingFilter, sourceFilter)
   if (sourceFilter !== 'All') {
     filteredVideogames = filteredVideogames.filter(videogame => videogame.source === sourceFilter);
   }
-  
   return filteredVideogames;
 }
 
@@ -58,7 +58,6 @@ const Home = () => {
 
   let displayGames = searchResults.length > 0 ? filteredSearchResults : filteredGames;
 
-  // Pagination
   const indexOfLastGame = currentPage * gamesPerPage;
   const indexOfFirstGame = indexOfLastGame - gamesPerPage;
   const currentGames = displayGames.slice(indexOfFirstGame, indexOfLastGame);
@@ -69,9 +68,19 @@ const Home = () => {
   };
 
   useEffect(() => {
-    dispatch(getVideogames());
+    const fetchData = async () => {
+      try {
+        await dispatch(getVideogames());
+        setIsLoading(false);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        setIsLoading(false);
+      }
+    };
+  
+    fetchData();
   }, [dispatch]);
-
+  
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth); 
     window.addEventListener('resize', handleResize); 
@@ -92,27 +101,39 @@ const Home = () => {
   return (
     <>
       <Header activePage="home" />
-      <div className={currentGames.length > 0 ? "filter-container-home" : "notFilter-container-home"}>
-      <SearchBar />
-      <FilterData />
-      </div>
+      {(!isLoading && allVideogames.length > 0 ) && (
+        <div className="filter-container-home">
+          <SearchBar />
+          <FilterData />
+        </div>
+      )}
       <div className={currentGames.length > 0 ? "games-container" : "games-containernoGrid"}>
-        {currentGames.length > 0 ? (
+        {isLoading ? (
+          <div className='container-home-gamesLoading'>
+            <Loading isLoading={isLoading} />
+            <p>Cargando Juegos...</p>
+          </div>
+        ) : allVideogames.length === 0 ? (
+          <div className='noConnection'>
+            <MdSignalWifiConnectedNoInternet4 className='iconConnect'/>
+            <p>No se pudo establecer conexión con la base de datos, posiblemente porque el backend está inactivo en Google Cloud por temas de coste. Te recomendamos ponerte en contacto con Daniel Díaz para solicitar la activación del servidor.</p>
+          </div>
+        ) : currentGames.length > 0 ? (
           currentGames.map((videogame, index) => (
-            <Link to={`/game/${videogame.id}`} key={index} onClick={handleClickAndScroll} className="game-card">
+            <Link to={`/VideoGame/game/${videogame.id}`} key={index} onClick={handleClickAndScroll} className="game-card">
               <img src={videogame.image} alt={videogame.name} className="game-image" />
               <h2>{videogame.name}</h2>
               <p className='games-genres'>{videogame.genres}</p>
               <StarRating rating={videogame.rating} />
             </Link>
           ))
-          ) : (
-            <div className='container-home-gamesLoading'>
-            <Loading isLoading={isLoading} />
-            <p>Cargando Juegos...</p>
+        ) : (
+          <div className='noConnection'>
+            <MdOutlineQuestionMark className='iconConnect'/>
+            <p>No hay juegos que coincidan con los filtros seleccionados.</p>
           </div>
         )}
-        </div>
+      </div>
       <br></br>
       <Pagination
         gamesLength={displayGames.length}

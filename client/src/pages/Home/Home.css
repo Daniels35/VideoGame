@@ -6,10 +6,6 @@
     z-index: 99;
   }
 
-  .notFilter-container-home {
-    display: none;
-  }
-
   .container-home-gamesLoading {
     display: flex;
     min-height: 500px;
@@ -47,6 +43,27 @@
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 0 10px #fff;
+  }
+
+  .noConnection {
+    display: flex;
+    min-height: 500px;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    z-index: 99;
+    margin-top: 30px;
+  }
+
+  .noConnection p {
+    max-width: 500px;
+    margin: 20px;
+    text-align: justify;
+  }
+  .iconConnect {
+    font-size: 45px;
+    margin-top: 100px;
   }
   
   @media (max-width: 600px) {

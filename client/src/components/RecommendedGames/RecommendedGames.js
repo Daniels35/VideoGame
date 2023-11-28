@@ -23,7 +23,7 @@ function RecommendedGames() {
             <h2 className='recommendedTitle'>Juegos Recomendados</h2>
             <div className="recommended-games">
                 {recommendedGames.map((game, index) => (
-                    <Link to={`/game/${game.id}`} key={index} onClick={handleClick}>
+                    <Link to={`/VideoGame/game/${game.id}`} key={index} onClick={handleClick}>
                         <img src={game.image} alt={game.name} />
                         <p>{game.name}</p>
                         <p>{game.genres}</p>

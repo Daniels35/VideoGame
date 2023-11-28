@@ -10,7 +10,6 @@ const FilterData = () => {
     const ratingFilter = useSelector((state) => state.ratingFilter);
     const sourceFilter = useSelector((state) => state.sourceFilter);
 
-
     useEffect(() => {
         dispatch(getGenres());
     }, [dispatch]);
@@ -37,7 +36,6 @@ const FilterData = () => {
 
     return (
         <div className='filter-container-1'>
-        
             <h1>Filtros</h1>
         <div className="filter-container">
             <select value={filterBy} onChange={handleGenreChange}>
