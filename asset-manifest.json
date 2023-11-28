@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/VideoGame/static/css/main.c1aef11e.css",
-    "main.js": "/VideoGame/static/js/main.9f12fcca.js",
+    "main.css": "/VideoGame/static/css/main.3e4bec29.css",
+    "main.js": "/VideoGame/static/js/main.4125c5e5.js",
     "static/js/787.c4e7f8f9.chunk.js": "/VideoGame/static/js/787.c4e7f8f9.chunk.js",
     "static/media/OIG.webp": "/VideoGame/static/media/OIG.ffde91ed1f785bbf2de2.webp",
     "static/media/nintendo.svg": "/VideoGame/static/media/nintendo.6425e4b07299882ea9ca0a04a989a941.svg",
@@ -10,12 +10,12 @@
     "static/media/playstation.svg": "/VideoGame/static/media/playstation.0b503f692984a44cee6f281ba91462bb.svg",
     "index.html": "/VideoGame/index.html",
     "static/media/laptop-solid.svg": "/VideoGame/static/media/laptop-solid.39a8d2f9c69e4f261e833d54ab8091c1.svg",
-    "main.c1aef11e.css.map": "/VideoGame/static/css/main.c1aef11e.css.map",
-    "main.9f12fcca.js.map": "/VideoGame/static/js/main.9f12fcca.js.map",
+    "main.3e4bec29.css.map": "/VideoGame/static/css/main.3e4bec29.css.map",
+    "main.4125c5e5.js.map": "/VideoGame/static/js/main.4125c5e5.js.map",
     "787.c4e7f8f9.chunk.js.map": "/VideoGame/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c1aef11e.css",
-    "static/js/main.9f12fcca.js"
+    "static/css/main.3e4bec29.css",
+    "static/js/main.4125c5e5.js"
   ]
 }
